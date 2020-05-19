@@ -8,7 +8,7 @@
 2020.03~2020.06
 
 ## 프로젝트 개요
-<img src="./img/ddoring.png">
+<img src="./img/ddoring.PNG">
 
 ## 주요 기능
 
