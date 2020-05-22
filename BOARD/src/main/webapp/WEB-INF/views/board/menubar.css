@@ -1,0 +1,201 @@
+@charset "UTF-8";
+body{
+ margin:0px;
+ padding:0px;
+ font-size:11px;
+ font-family: "맑은 고딕";
+}
+#top{
+	background-color: #132c6f; 
+	height:40px; 
+	width: 100%;
+	margin: 0 auto;
+}
+#logo-area{
+	background-color: #ffffff;
+	width: 100%;
+	border: 1px solid #a8a8a8;
+}
+
+.menubar{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font: 67.5% "맑은 고딕";
+font-size:14px;
+font-weight:bold;
+}
+
+.menubar ul{
+background: rgb(109,109,109);
+height:50px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.menubar li{
+float:left;
+padding:0px;
+}
+
+.menubar li a{
+background: rgb(109,109,109);
+color:#cccccc;
+display:block;
+font-weight:normal;
+line-height:50px;
+margin:0px;
+padding:0px 25px;
+text-align:center;
+text-decoration:none;
+}
+
+.menubar li a:hover, .menubar ul li:hover a{
+background: rgb(71,71,71);
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.menubar li ul{
+background: rgb(109,109,109);
+display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+height:auto;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+width:200px;
+z-index:200;
+/*top:1em;
+/*left:0;*/
+}
+
+.menubar li:hover ul{
+display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+}
+
+.menubar li li {
+background: rgb(109,109,109);
+display:block;
+float:none;
+margin:0px;
+padding:0px;
+width:200px;
+}
+
+.menubar li:hover li a{
+background:none;
+}
+
+.menubar li ul a{
+display:block;
+height:50px;
+font-size:12px;
+font-style:normal;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+}
+
+.menubar li ul a:hover, .menubar li ul li:hover a{
+background: rgb(71,71,71);
+border:0px;
+color:#ffffff;
+text-decoration:none;
+}
+
+.menubar p{
+clear:left;
+}
+
+h1{
+	font-family: "gulim";
+	font-size: 30px;
+	margin-left: 300px;
+	margin-bottom: 20px;
+	margin-top: 50px;
+	
+}
+
+input{
+	font-size:11px;
+	font-family: "맑은 고딕";
+	width: 325px;
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+}
+button{
+	font-size:11px;
+	font-family: "맑은 고딕";
+	width: 50px;
+	height: 100%;
+	border: 0px;
+	background: #132c6f;
+	outline: none;
+	float: right;
+	color: #ffffff;
+}
+select{
+	font-size:11px;
+	font-family: "맑은 고딕";
+	width: 100px;
+	height: 28px;
+	border: 1px solid #132c6f;
+	padding: 2px;
+	margin: 10px;
+}
+table{
+	 font-size:11px;
+	 font-family: "맑은 고딕";
+	 border-collapse: collapse;
+	 margin: auto;
+	 width:60%
+}
+td{
+ border-bottom: 1px solid #a8a8a8;
+ text-align:center;
+ padding:10px 10px;
+}
+th{
+ height:34px;
+ padding:0px 0px;
+ font-size:12px;
+}
+th span{
+/*  border-right:1px solid #666; */
+ background: url(images/bar7_1.png) no-repeat right 10px;
+  display:block;
+  padding:0px 0px 2px 0px;
+}
+tr:FIRST-CHILD{
+ border-bottom: 4px double #a8a8a8;
+}
+tr:last-CHILD{
+ border-bottom: 2px solid #a8a8a8;
+}
+th:FIRST-CHILD{
+}
+ /* 2열의 th 내용*/
+th:nth-child(2) {
+ background: url(images/table_header_bg.png) center top repeat-x;
+}
+th:nth-child(3) {
+ background: url(images/table_header_bg.png) center top repeat-x;
+}
+th:nth-child(4) {
+ background: url(images/table_header_bg.png) center top repeat-x;
+}
+th:nth-child(5) {
+ background: url(images/table_header_bg.png) right top repeat-x;
+}
+.bb{
+ border:none;
+}
+td{
+ background: url(images/bar7_1.png) no-repeat right bottom;
+}
+
