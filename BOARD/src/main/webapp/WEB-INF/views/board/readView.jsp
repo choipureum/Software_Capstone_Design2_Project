@@ -15,16 +15,16 @@
 				 	margin:0px;
 				 	padding:0px;
 				 	font-size:11px;
-				 	font-family: "맑은 고딕";
+				 	ont-family: "맑은 고딕";
 				}
 				
 			#top{
-					background-color: #132c6f; 
+					background-color: #1D2475; 
 					height:40px; 
 					width: 100%;
 					margin: 0 auto;
-				}
-				
+			}
+			
 			#logo-area{
 						background-color: #ffffff;
 						width: 100%;
@@ -32,48 +32,59 @@
 					}
 			
 			.menubar{
-						border:none;
-						border:0px;
-						margin:0px;
-						padding:0px;
-						font: 67.5% "맑은 고딕";
-						font-size:13px;
-						font-weight:bold;
-					}
+				border:none;
+				border:0px;
+				margin:0px;
+				padding:0px;
+				font: 67.5% "맑은 고딕";
+				font-size:15px;
+				width: 100%
+				}
 			
 			.menubar ul{
-							background: rgb(109,109,109);
-							height:50px;
-							list-style:none;
-							margin:0 auto;
-							padding:0;
-						}
+				background: #FFFFFF;
+				height:50px;
+				list-style:none;
+				margin:0;
+				padding:0;
+				float: middle;
+				
+				}
 				
 			.menubar li{
 							float:left;
 							padding:0px;
 						}
 				
+			/*한양대 로고 */
+			.menubar img{
+							height:50px; 
+							width:auto;
+							float: left;
+							padding-left:30px
+						}	
+						
 			.menubar li a{
-							background: rgb(109,109,109);
-							color:#cccccc;
+							background: #FFFFFF;
+							color:rgb(71,71,71);
 							display:block;
 							font-weight:normal;
 							line-height:50px;
-							margin:0px auto;
-							padding:0px 25px;
+							margin:0px;
+							padding:0px 35px;
 							text-align:center;
 							text-decoration:none;
 						}
 				
 			.menubar li a:hover, .menubar ul li:hover a{
-															background: rgb(71,71,71);
-															color:#FFFFFF;
+															background: #CCCCCC;
+															color:rgb(71,71,71);
 															text-decoration:none;
 														}
+
 				
 			.menubar li ul{
-							background: rgb(109,109,109);
+							background: #FFFFFF;
 							display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
 							height:auto;
 							padding:0px;
@@ -85,13 +96,15 @@
 							/*top:1em;
 							/*left:0;*/
 						}
+
 				
+			
 			.menubar li:hover ul{
 									display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 								}
 				
 			.menubar li li {
-								background: rgb(109,109,109);
+								background: #FFFFFF;
 								display:block;
 								float:none;
 								margin:0px;
@@ -99,30 +112,32 @@
 								width:200px;
 							}
 				
+		
 			.menubar li:hover li a{
 									background:none;
-								  }
+								}
 				
 			.menubar li ul a{
 								display:block;
 								height:50px;
-								font-size:12px;
+								font-size:13px;
 								font-style:normal;
 								margin:0px;
 								padding:0px 10px 0px 15px;
 								text-align:left;
-							 }
+							}
 				
 			.menubar li ul a:hover, .menubar li ul li:hover a{
-																background: rgb(71,71,71);
+																background: #CCCCCC;
 																border:0px;
 																color:#ffffff;
 																text-decoration:none;
-															 }
-				
+															}
+								
 			.menubar p{
 						clear:left;
-					  }
+					}
+
 				
 			/*검색창 CSS*/
 			.search_span select{
@@ -145,14 +160,22 @@
 					text-decoration:none;
 					display:block;
 					color:white;				
-				  }
+				}		
+				
+			#write>a{
+						text-decoration: none;
+						font-size:15px;
+						font-family:"맑은 고딕";
+						color:black;
+						margin:10px;				
+					}
 				  	
 			label{
-				font-size:15px !important;			
+					font-size:15px !important;			
 			}
 			
 			li>p{
-				font-size:13px !important;
+					font-size:13px !important;
 			}
 		</style>
 		
@@ -165,21 +188,27 @@
 			
 			//작성자와 로그인멤버 아이디가 같을경우 수정,삭제 발생
 			//만약 작성자와 로그인멤버 아이디가 같을경우 신청하기 버튼 발생
- 			if ("${member.userId}"=="${read.writer}") {	
- 					//일단걸림												
+			if ("${member.userId}"=="${read.writer}") {	
+						
 	 				$("#ud").attr("style","display:inline-block");
 	 				$("#dl").attr("style","display:inline-block");	
-	 				$("#admit").attr("style","display:inline-block");					
-				}			
+	 				$("#admit").attr("style","display:inline-block");
+	 				$("#reply_ud").attr("style","display:none");
+	 				$("#reply_dl").attr("style","display:none");
+	 				$("#replyApplication").hide();
+	 				
+				}
+					
 			else {			
 					$("#ud").attr("style","display:none");
 					$("#dl").attr("style","display:none");	
 					$("#admit").attr("style","display:none");
-							
+					$("#reply_ud").attr("style","display:inline-block");
+	 				$("#reply_dl").attr("style","display:inline-block");
+	 				$("#replyApplication").show();
+	 				
  				}
 				
-			
-			
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
@@ -241,6 +270,7 @@
 // 					}
 // 			});
 			
+			//댓글 삭제 View
 			$(".replyDeleteBtn").on("click", function(){
 				location.href = "/board/replyDeleteView?bno=${read.bno}"
 					+ "&page=${scri.page}"
@@ -264,14 +294,15 @@
 	<body>
 	
 		<div id="top">
-			<span style="float:left; padding-left:10px"><img src="${pageContext.request.contextPath}/resources/ddoring_logo_white.png" style="padding:5px;" 
-			width="auto" height="100%" alt="Logo"></span>
+			<span style="float:left; padding-left:40px">
+				<img src="${pageContext.request.contextPath}/resources/ddoring_logo_white.png" style="padding:5px;" width="auto" height="100%" alt="Logo">
+			</span>
 			
 			<!-- 회원님 안녕하세요 -->
-			<div style="position:absolute;left:60px; top:12px">
+			<div style="position:absolute;left:100px; top:12px">
 			<c:if test="${member != null}">
-				<p id="lg_hi">${member.userId}님 환영합니다.</p>		
-			</c:if>		
+				<p id="lg_hi">${member.userId}님 환영합니다.</p>
+			</c:if>
 			</div>
 			
 			<!-- 로그아웃 -->
@@ -279,20 +310,26 @@
 				<c:if test="${member != null}"><a href="/member/logout" id="logout" onclick="alert('로그아웃 되었습니다')">로그아웃</a></c:if>	
 			</div> 
 		</div>
-
-		<div id="logo-area" style="height:70px;">
-			<!-- 홈새로고침 -->
-			<a href="http://localhost:8080/board/list/">
-				<span style="float:left; padding-left:10px;"><img src="${pageContext.request.contextPath}/resources/HYU_logo.png" style="padding: 10px;" 
-				height="100%" width="auto" alt="HYU_logo">
-				</span>
-			</a><br>
-			<span style="color:#132c6f; padding:20px; font-size:27px">| 한양또래튜터링 "또링"</span>
-		</div>	
-				
+		
+		<!-- 원래 홈새로고침 가 있던 자리입니다 -->	
+		
 		<!-- 메뉴바 -->
-		<div class="menubar" style="margin:0 auto;">
+		<div class="menubar" style="margin:0 auto; padding:20px">
+		
+<!-- 		<!-- 홈새로고침 --> 
+<!-- 		<a href="http://localhost:8080/board/list/"> -->
+<%-- 			<span style="float:left; padding-left:10px;"><img src="${pageContext.request.contextPath}/resources/HYU_logo.png" style="padding: 10px;"  --%>
+<!-- 			height="100%" width="auto" alt="HYU_logo"> -->
+<!-- 			</span></a><br> -->
+<!-- 			<span style="color:#132c6f; padding:20px; font-size:27px">| 한양또래튜터링 "또링"</span> -->
+
+			<a href="http://localhost:8080/board/list/">
+			<img src="${pageContext.request.contextPath}/resources/HYU_logo.png" align="left" alt="HYU_logo">
+			</a>
 			<ul>
+			<li style="background: #FFFFFF; color:rgb(109,109,109); display:block; font-weight:맑은고딕;
+				font-size: 23px; line-height:50px; margin:0px; padding:0px 150px 0 20; text-align:center;
+				text-decoration:none;">| &nbsp; 한양또래튜터링</li>
 				<li><a href="#">또링 소개</a>
 			    	<ul>
 			        	<li><a href="#">또링 소개</a></li>
@@ -309,7 +346,7 @@
 			    </li>
 			    <li><a href="#">알림마당</a>
 			    	<ul>
-			            <li><a href="#">공지사항</a></li>
+			            <li><a href="https://www.hanyang.ac.kr/web/www/main-notices" target="_blank">공지사항</a></li>
 			            <li><a href="#">한양또래튜터링 일정</a></li>
 			            <li><a href="#">한양또래튜터링 현황 및 수상</a></li>
 			            <li><a href="#">FAQ</a></li>
@@ -317,7 +354,9 @@
 			      </li>
 			 </ul>
 		</div>
-		
+		<div style="margin:50px 0 50px 200px">
+			<h2 style="font-family:맑은고딕;">튜터링 매칭</h2>		
+		</div>
 		<div class="container">
 			
 			<section id="container">
@@ -356,7 +395,7 @@
 				</div>
 				<hr>
 				<div>
-					<button type="button" class="update_btn btn btn-warning" id="ud" >수정</button>
+					<button type="button" class="update_btn btn btn-warning" id="ud">수정</button>
 					<button type="button" class="delete_btn btn btn-danger"  id="dl">삭제</button>
 					<button type="button" class="list_btn btn btn-primary">목록</button>	
 				</div>
@@ -373,44 +412,45 @@
 								  
 								<p>${replyList.content}</p>
 								<div>
-									<button type="button" class="replyUpdateBtn btn btn-warning"data-rno="${replyList.rno}" >수정</button>
-									<button type="button" class="replyDeleteBtn btn btn-danger"  data-rno="${replyList.rno}">삭제</button>
-									<button type="button" id="admit" >신청 승인</button>
+									<button type="button" class="replyUpdateBtn btn btn-warning" data-rno="${replyList.rno}" id="reply_ud">수정</button>
+									<button type="button" class="replyDeleteBtn btn btn-danger" data-rno="${replyList.rno}" id="reply_dl">삭제</button>
+									<button type="button" class="admitRequestBtn btn btn-info" id="admit">신청 승인</button>
 								</div>
 							</li>
 						</c:forEach>   
 					</ol>
 				</div>
-				
-				<form name="replyForm" method="post" class="form-horizontal">
-					<input type="hidden" id="bno" name="bno" value="${read.bno}" />
-					<input type="hidden" id="page" name="page" value="${scri.page}"> 
-					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
-					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
-					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-				
-					<div class="form-group">
-						<label for="writer" class="col-sm-2 control-label">댓글 작성자</label>
-						<div class="col-sm-10">
-							<input type="text" id="writer" name="writer" class="form-control" value="${member.userId}" readonly="readonly"/>
-						</div>
-					</div>
+				<div id="replyApplication">
+					<form name="replyForm" method="post" class="form-horizontal" >
+						<input type="hidden" id="bno" name="bno" value="${read.bno}" />
+						<input type="hidden" id="page" name="page" value="${scri.page}"> 
+						<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
+						<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
+						<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
 					
-					<div class="form-group">
-						<label for="content" class="col-sm-2 control-label">댓글 내용</label>
-						<div class="col-sm-10">
-							<input type="text" id="content" name="content" class="form-control" placeholder="튜터링신청을 원하시면 '신청합니다'라고 작성해주세요"/>
+						<div class="form-group" >
+							<label for="writer" class="col-sm-2 control-label" >댓글 작성자</label>
+							<div class="col-sm-10">
+								<input type="text" id="writer" name="writer" class="form-control" value="${member.userId}" readonly="readonly"/>
+							</div>
 						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="replyWriteBtn btn btn-success">작성</button>
+						
+						<div class="form-group" >
+							<label for="content" class="col-sm-2 control-label" >댓글 내용</label>
+							<div class="col-sm-10">
+								<input type="text" id="content" name="content" class="form-control" placeholder="튜터링신청을 원하시면 '신청합니다'라고 작성해주세요"/>
+							</div>
 						</div>
-					</div>
-				</form>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="button" class="replyWriteBtn btn btn-success">작성</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				
 				<!-- updateForm  댓글 삭제 기능 -->
-				
 				<form name="updateForm" role="form" method="post" action="/board/replyDelete">
 					<input type="hidden" name="bno" value="${replyDelete.bno}" readonly="readonly"/>
 					<input type="hidden" id="rno" name="rno" value="${replyDelete.rno}" />
@@ -418,7 +458,6 @@
 					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
 					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
 					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-
 				</form>
 			</section>
 			<hr />

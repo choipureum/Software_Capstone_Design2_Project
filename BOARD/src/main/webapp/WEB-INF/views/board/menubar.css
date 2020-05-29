@@ -18,21 +18,44 @@ body{
 }
 
 .menubar{
+body{
+ margin:0px;
+ padding:0px;
+ font-size:11px;
+ font-family: "맑은 고딕";
+}
+#top{
+	background-color: #1D2475; 
+	height:40px; 
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+.menubar{
 border:none;
 border:0px;
 margin:0px;
 padding:0px;
 font: 67.5% "맑은 고딕";
-font-size:14px;
-font-weight:bold;
+font-size:15px;
+width: 100%
+}
+.menubar img{
+	height:50px; 
+	width:auto;
+	float: left;
+	padding-left:30px
 }
 
 .menubar ul{
-background: rgb(109,109,109);
+background: #FFFFFF;
 height:50px;
 list-style:none;
 margin:0;
 padding:0;
+float: middle;
+
 }
 
 .menubar li{
@@ -41,25 +64,25 @@ padding:0px;
 }
 
 .menubar li a{
-background: rgb(109,109,109);
-color:#cccccc;
+background: #FFFFFF;
+color:rgb(71,71,71);
 display:block;
 font-weight:normal;
 line-height:50px;
 margin:0px;
-padding:0px 25px;
+padding:0px 35px;
 text-align:center;
 text-decoration:none;
 }
 
 .menubar li a:hover, .menubar ul li:hover a{
-background: rgb(71,71,71);
-color:#FFFFFF;
+background: #CCCCCC;
+color:rgb(71,71,71);
 text-decoration:none;
 }
 
 .menubar li ul{
-background: rgb(109,109,109);
+background: #FFFFFF;
 display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
 height:auto;
 padding:0px;
@@ -77,7 +100,7 @@ display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 }
 
 .menubar li li {
-background: rgb(109,109,109);
+background: #FFFFFF;
 display:block;
 float:none;
 margin:0px;
@@ -92,7 +115,7 @@ background:none;
 .menubar li ul a{
 display:block;
 height:50px;
-font-size:12px;
+font-size:13px;
 font-style:normal;
 margin:0px;
 padding:0px 10px 0px 15px;
@@ -100,7 +123,7 @@ text-align:left;
 }
 
 .menubar li ul a:hover, .menubar li ul li:hover a{
-background: rgb(71,71,71);
+background: #CCCCCC;
 border:0px;
 color:#ffffff;
 text-decoration:none;
@@ -110,92 +133,47 @@ text-decoration:none;
 clear:left;
 }
 
-h1{
-	font-family: "gulim";
-	font-size: 30px;
-	margin-left: 300px;
-	margin-bottom: 20px;
-	margin-top: 50px;
-	
-}
 
-input{
-	font-size:11px;
-	font-family: "맑은 고딕";
-	width: 325px;
-	padding: 10px;
-	border: 0px;
-	outline: none;
-	float: left;
-}
-button{
-	font-size:11px;
-	font-family: "맑은 고딕";
-	width: 50px;
-	height: 100%;
-	border: 0px;
-	background: #132c6f;
-	outline: none;
-	float: right;
-	color: #ffffff;
-}
-select{
-	font-size:11px;
-	font-family: "맑은 고딕";
-	width: 100px;
-	height: 28px;
-	border: 1px solid #132c6f;
-	padding: 2px;
-	margin: 10px;
-}
-table{
-	 font-size:11px;
-	 font-family: "맑은 고딕";
-	 border-collapse: collapse;
-	 margin: auto;
-	 width:60%
-}
-td{
- border-bottom: 1px solid #a8a8a8;
- text-align:center;
- padding:10px 10px;
-}
-th{
- height:34px;
- padding:0px 0px;
- font-size:12px;
-}
-th span{
-/*  border-right:1px solid #666; */
- background: url(images/bar7_1.png) no-repeat right 10px;
-  display:block;
-  padding:0px 0px 2px 0px;
-}
-tr:FIRST-CHILD{
- border-bottom: 4px double #a8a8a8;
-}
-tr:last-CHILD{
- border-bottom: 2px solid #a8a8a8;
-}
-th:FIRST-CHILD{
-}
- /* 2열의 th 내용*/
-th:nth-child(2) {
- background: url(images/table_header_bg.png) center top repeat-x;
-}
-th:nth-child(3) {
- background: url(images/table_header_bg.png) center top repeat-x;
-}
-th:nth-child(4) {
- background: url(images/table_header_bg.png) center top repeat-x;
-}
-th:nth-child(5) {
- background: url(images/table_header_bg.png) right top repeat-x;
-}
-.bb{
- border:none;
-}
-td{
- background: url(images/bar7_1.png) no-repeat right bottom;
-}
+*{margin:0;padding:0;}
+  ul,li{list-style:none;}
+  #slide{height:300px;position:relative;overflow:hidden;}
+  #slide ul{width:400%;height:100%;transition:1s;}
+  #slide ul:after{content:"";display:block;clear:both;}
+  #slide li{float:left;width:25%;height:100%;}
+  #slide li:nth-child(1){background:#faa;}
+  #slide li:nth-child(2){background:#ffa;}
+  #slide li:nth-child(3){background:#faF;}
+  #slide li:nth-child(4){background:#aaf;}
+  #slide input{display:none;}
+  #slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
+  #slide .pos{text-align:center;position:absolute;bottom:10px;left:0;width:100%;text-align:center;}
+  #pos1:checked~ul{margin-left:0%;}
+  #pos2:checked~ul{margin-left:-100%;}
+  #pos3:checked~ul{margin-left:-200%;}
+  #pos4:checked~ul{margin-left:-300%;}
+  #pos1:checked~.pos>label:nth-child(1){background:#666;}
+  #pos2:checked~.pos>label:nth-child(2){background:#666;}
+  #pos3:checked~.pos>label:nth-child(3){background:#666;}
+  #pos4:checked~.pos>label:nth-child(4){background:#666;}
+  
+#mainboard{margin:20px; border-top:solid #cccccc 0.2px;}
 
+.graph { 
+        position: relative; /* IE is dumb */
+        width: 250px; 
+        border: 1px solid #B1D632; 
+        padding: 2px; 
+		font-size:11px;
+		font-family:tahoma;
+		margin-bottom:3px;
+    }
+    .graph .bar { 
+        display: block;
+        position: relative;
+        background: #B1D632; 
+        text-align: center; 
+        color: #333; 
+        height: 2em; 
+        line-height: 2em;            
+    }
+    .graph .bar span { position: absolute; left: 1em; }

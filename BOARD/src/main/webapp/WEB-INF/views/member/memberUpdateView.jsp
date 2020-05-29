@@ -19,6 +19,10 @@
 				
 				location.href = "/";					    
 			})
+			
+			$("#delete_member").on("click", function(){
+				location.href="/member/memberDeleteView";
+			})
 		
 			$("#submit").on("click", function(){
 				if($("#userPass").val()==""){
@@ -71,6 +75,7 @@
 			</form>
 				<div class="form-group has-feedback">
 					<button class="btn btn-success" type="button" id="submit">회원정보수정</button>
+					<button class="btn btn-warning" type="button" id="delete_member">회원탈퇴</button>
 					<button class="cencle btn btn-danger" type="button">취소</button>
 				</div>
 		</section>

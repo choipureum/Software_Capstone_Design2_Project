@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html> 
+<style>
+body{
+ margin:0px;
+ padding:0px;
+ font-size:11px;
+ font-family: "맑은 고딕";
+}
+#top{
+	background-color: #1D2475; 
+	height:40px; 
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+.menubar{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font: 67.5% "맑은 고딕";
+font-size:15px;
+width: 100%
+}
+.menubar img{
+	height:50px; 
+	width:auto;
+	float: left;
+	padding-left:30px
+}
+
+.menubar ul{
+background: #FFFFFF;
+height:50px;
+list-style:none;
+margin:0;
+padding:0;
+float: middle;
+
+}
+
+.menubar li{
+float:left;
+padding:0px;
+}
+
+.menubar li a{
+background: #FFFFFF;
+color:rgb(71,71,71);
+display:block;
+font-weight:normal;
+line-height:50px;
+margin:0px;
+padding:0px 35px;
+text-align:center;
+text-decoration:none;
+}
+
+.menubar li a:hover, .menubar ul li:hover a{
+background: #CCCCCC;
+color:rgb(71,71,71);
+text-decoration:none;
+}
+
+.menubar li ul{
+background: #FFFFFF;
+display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+height:auto;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+width:200px;
+z-index:200;
+/*top:1em;
+/*left:0;*/
+}
+
+.menubar li:hover ul{
+display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+}
+
+.menubar li li {
+background: #FFFFFF;
+display:block;
+float:none;
+margin:0px;
+padding:0px;
+width:200px;
+}
+
+.menubar li:hover li a{
+background:none;
+}
+
+.menubar li ul a{
+display:block;
+height:50px;
+font-size:13px;
+font-style:normal;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+}
+
+.menubar li ul a:hover, .menubar li ul li:hover a{
+background: #CCCCCC;
+border:0px;
+color:#ffffff;
+text-decoration:none;
+}
+
+.menubar p{
+clear:left;
+}
+
+.intro{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font: 67.5% "맑은 고딕";
+font-size:15px;
+width: 100%
+}
+.intro p{
+	font-size: 30px; 
+	margin-left: 200px; 
+	margin-bottom: 20px; 
+	margin-top: 50px;
+}
+.intro img{
+	padding:50 20 20 200;
+}
+.intro li{
+	font: 13px
+}
+
+
+</style>
+<body>
+
+<div id="top">
+	<span style="float:left; padding-left:40px"><img src="ddoring_logo_white.png" style="padding:5px;" 
+	width="auto" height="70%" alt="Logo"></span>
+	<span style="color:white; padding-top:13px; padding-left:20px; 
+	display:table-cell; vertical-align:middle;">
+	해양융합공학과 정은성님</span>
+	<span style="color:white; padding-top:13px; padding-left:1040px; 
+	display:table-cell; text-align:right;">로그아웃 &nbsp; &nbsp; &nbsp; 환경설정</span>
+</div>
+	
+<div class="menubar" style="padding:20px;">
+
+	<img src="HYU_logo.png" align="left" alt="HYU_logo">
+
+	<ul>
+		<li style="background: #FFFFFF; color:rgb(109,109,109); display:block; font-weight:맑은고딕;
+		font-size: 23px; line-height:50px; margin:0px; padding:0px 150px 0 20; text-align:center;
+		text-decoration:none;">| &nbsp; 한양또래튜터링</li>
+		
+		<li><a href="#">또링 소개</a>
+			<ul>
+				<li><a href="#">또링 소개</a></li>
+				<li><a href="#">한양또래튜터링 소개</a></li>
+				<li><a href="#">교수학습지원센터 바로가기</a></li>
+			</ul>
+		</li>
+		<li><a href="#" id="current">튜터링 매칭</a></li>
+		<li><a href="#">나의 튜터링</a>
+			<ul>
+				<li><a href="#">커뮤니티</a></li>
+				<li><a href="#">신청 현황</a></li>
+			</ul>
+		</li>
+		<li><a href="#">알림마당</a>
+			<ul>
+				<li><a href="#">공지사항</a></li>
+				<li><a href="#">한양또래튜터링 일정</a></li>
+				<li><a href="#">한양또래튜터링 현황 및 수상</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div class="intro">
+	<p> 또링 소개 </p>
+	<img src="ddoring_logo_blue.png" width="auto" height="200" alt="Logo" align="left">
+	<ul>
+		<li>한양대학교 ERICA캠퍼스 ‘또래 튜터링’의 줄임말</li>
+		<li>‘또 링크하자’의 줄임말로, 또래 튜터링이 한 번으로 끝나는 것이 아닌 지속적인 활동이 되기를 바람</li>
+		<li>튜터와 튜티의 매칭이 자유롭고 투명</li>
+		<li>튜터와 튜티가 활발하게 소통하며 발전할 수 있음</li>
+	</ul>	
+	
+</div>
+</body>
+</html>

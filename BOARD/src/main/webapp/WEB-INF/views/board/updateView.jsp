@@ -15,16 +15,16 @@
 				 	margin:0px;
 				 	padding:0px;
 				 	font-size:11px;
-				 	font-family: "맑은 고딕";
+				 	ont-family: "맑은 고딕";
 				}
 				
 			#top{
-					background-color: #132c6f; 
+					background-color: #1D2475; 
 					height:40px; 
 					width: 100%;
 					margin: 0 auto;
-				}
-				
+			}
+			
 			#logo-area{
 						background-color: #ffffff;
 						width: 100%;
@@ -32,48 +32,59 @@
 					}
 			
 			.menubar{
-						border:none;
-						border:0px;
-						margin:0px;
-						padding:0px;
-						font: 67.5% "맑은 고딕";
-						font-size:13px;
-						font-weight:bold;
-					}
+				border:none;
+				border:0px;
+				margin:0px;
+				padding:0px;
+				font: 67.5% "맑은 고딕";
+				font-size:15px;
+				width: 100%
+				}
 			
 			.menubar ul{
-							background: rgb(109,109,109);
-							height:50px;
-							list-style:none;
-							margin:0 auto;
-							padding:0;
-						}
+				background: #FFFFFF;
+				height:50px;
+				list-style:none;
+				margin:0;
+				padding:0;
+				float: middle;
+				
+				}
 				
 			.menubar li{
 							float:left;
 							padding:0px;
 						}
 				
+			/*한양대 로고 */
+			.menubar img{
+							height:50px; 
+							width:auto;
+							float: left;
+							padding-left:30px
+						}	
+						
 			.menubar li a{
-							background: rgb(109,109,109);
-							color:#cccccc;
+							background: #FFFFFF;
+							color:rgb(71,71,71);
 							display:block;
 							font-weight:normal;
 							line-height:50px;
-							margin:0px auto;
-							padding:0px 25px;
+							margin:0px;
+							padding:0px 35px;
 							text-align:center;
 							text-decoration:none;
 						}
 				
 			.menubar li a:hover, .menubar ul li:hover a{
-															background: rgb(71,71,71);
-															color:#FFFFFF;
+															background: #CCCCCC;
+															color:rgb(71,71,71);
 															text-decoration:none;
 														}
+
 				
 			.menubar li ul{
-							background: rgb(109,109,109);
+							background: #FFFFFF;
 							display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
 							height:auto;
 							padding:0px;
@@ -85,13 +96,15 @@
 							/*top:1em;
 							/*left:0;*/
 						}
+
 				
+			
 			.menubar li:hover ul{
 									display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
 								}
 				
 			.menubar li li {
-								background: rgb(109,109,109);
+								background: #FFFFFF;
 								display:block;
 								float:none;
 								margin:0px;
@@ -99,30 +112,32 @@
 								width:200px;
 							}
 				
+		
 			.menubar li:hover li a{
 									background:none;
-								  }
+								}
 				
 			.menubar li ul a{
 								display:block;
 								height:50px;
-								font-size:12px;
+								font-size:13px;
 								font-style:normal;
 								margin:0px;
 								padding:0px 10px 0px 15px;
 								text-align:left;
-							 }
+							}
 				
 			.menubar li ul a:hover, .menubar li ul li:hover a{
-																background: rgb(71,71,71);
+																background: #CCCCCC;
 																border:0px;
 																color:#ffffff;
 																text-decoration:none;
-															 }
-				
+															}
+								
 			.menubar p{
 						clear:left;
-					  }
+					}
+
 				
 			/*검색창 CSS*/
 			.search_span select{
@@ -145,7 +160,7 @@
 					text-decoration:none;
 					display:block;
 					color:white;				
-				  }		
+				}		
 				
 			#write>a{
 						text-decoration: none;
@@ -153,7 +168,7 @@
 						font-family:"맑은 고딕";
 						color:black;
 						margin:10px;				
-					}	
+					}
 					
 			table{				
 				border: 20px solid white;
@@ -161,13 +176,13 @@
 			}
 			
 			th,td{
-				padding:5px;
+				padding:10px 15px 10px 10px;
 			}
 			
 			/*textarea style*/
 			.scrollabletextbox {
-								    height:300px;
-								    width:500px;		   
+								    height:500px;
+								    width:600px;		   
 								    font-size:100%;
 								    overflow:scroll;
 							   }
@@ -237,14 +252,15 @@
 	<body>
 	
 		<div id="top">
-			<span style="float:left; padding-left:10px"><img src="${pageContext.request.contextPath}/resources/ddoring_logo_white.png" style="padding:5px;" 
-			width="auto" height="100%" alt="Logo"></span>
+			<span style="float:left; padding-left:40px">
+				<img src="${pageContext.request.contextPath}/resources/ddoring_logo_white.png" style="padding:5px;" width="auto" height="100%" alt="Logo">
+			</span>
 			
 			<!-- 회원님 안녕하세요 -->
-			<div style="position:absolute;left:60px; top:12px">
+			<div style="position:absolute;left:100px; top:12px">
 			<c:if test="${member != null}">
-				<p id="lg_hi">${member.userId}님 환영합니다.</p>		
-			</c:if>		
+				<p id="lg_hi">${member.userId}님 환영합니다.</p>
+			</c:if>
 			</div>
 			
 			<!-- 로그아웃 -->
@@ -252,25 +268,31 @@
 				<c:if test="${member != null}"><a href="/member/logout" id="logout" onclick="alert('로그아웃 되었습니다')">로그아웃</a></c:if>	
 			</div> 
 		</div>
-
-		<div id="logo-area" style="height:70px;">
-			<!-- 홈새로고침 -->
-			<a href="http://localhost:8080/board/list/">
-				<span style="float:left; padding-left:10px;"><img src="${pageContext.request.contextPath}/resources/HYU_logo.png" style="padding: 10px;" 
-				height="100%" width="auto" alt="HYU_logo">
-				</span>
-			</a><br>
-			<span style="color:#132c6f; padding:20px; font-size:27px">| 한양또래튜터링 "또링"</span>
-		</div>	
-				
+		
+		<!-- 원래 홈새로고침 가 있던 자리입니다 -->	
+		
 		<!-- 메뉴바 -->
-		<div class="menubar" style="margin:0 auto;">
+		<div class="menubar" style="margin:0 auto; padding:20px">
+		
+<!-- 		<!-- 홈새로고침 --> 
+<!-- 		<a href="http://localhost:8080/board/list/"> -->
+<%-- 			<span style="float:left; padding-left:10px;"><img src="${pageContext.request.contextPath}/resources/HYU_logo.png" style="padding: 10px;"  --%>
+<!-- 			height="100%" width="auto" alt="HYU_logo"> -->
+<!-- 			</span></a><br> -->
+<!-- 			<span style="color:#132c6f; padding:20px; font-size:27px">| 한양또래튜터링 "또링"</span> -->
+
+			<a href="http://localhost:8080/board/list/">
+			<img src="${pageContext.request.contextPath}/resources/HYU_logo.png" align="left" alt="HYU_logo">
+			</a>
 			<ul>
+			<li style="background: #FFFFFF; color:rgb(109,109,109); display:block; font-weight:맑은고딕;
+				font-size: 23px; line-height:50px; margin:0px; padding:0px 150px 0 20; text-align:center;
+				text-decoration:none;">| &nbsp; 한양또래튜터링</li>
 				<li><a href="#">또링 소개</a>
 			    	<ul>
 			        	<li><a href="#">또링 소개</a></li>
 			            <li><a href="#">한양또래튜터링 소개</a></li>
-			            <li><a href="#">교수학습지원센터 바로가기</a></li>
+			            <li><a href="https://ectl.hanyang.ac.kr/home" target="_blank">교수학습지원센터 바로가기</a></li>
 			        </ul>
 			    </li>
 			    <li><a href="#" id="current">튜터링 매칭</a></li>
@@ -282,7 +304,7 @@
 			    </li>
 			    <li><a href="#">알림마당</a>
 			    	<ul>
-			            <li><a href="#">공지사항</a></li>
+			            <li><a href="https://www.hanyang.ac.kr/web/www/main-notices" target="_blank">공지사항</a></li>
 			            <li><a href="#">한양또래튜터링 일정</a></li>
 			            <li><a href="#">한양또래튜터링 현황 및 수상</a></li>
 			            <li><a href="#">FAQ</a></li>
@@ -290,8 +312,10 @@
 			      </li>
 			 </ul>
 		</div>
-	
-		<div id="root">
+		<div style="margin:50px 0 0 150px">
+			<h2 style="font-family:맑은고딕;">튜터링 매칭</h2>		
+		</div>
+		<div id="root" style="margin:30px 0 0 130px">
 			 
 			
 			<section id="container">
@@ -308,13 +332,13 @@
 							<tr>
 								<td>
 									<label for="title">제목</label></td>
-									<td><input type="text" id="title" name="title" value="${update.title}" placeholder=" [팀명] 주제명 / 형식으로 입력해주세요." size="65"/>
+									<td><input type="text" id="title" name="title" value="${update.title}" placeholder=" [팀명] 주제명 / 형식으로 입력해주세요." size="70"/>
 								</td>
 							</tr>	
 							<tr>
 								<td>
 									<label for="content">내용</label></td>
-									<td><textarea id="content" name="content" class="scrollabletextbox" placeholder="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
+									<td><textarea id="content" name="content" class="scrollabletextbox" placeholder="내용을 입력하세요." "style=width:600px;height:500px"><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>
