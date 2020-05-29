@@ -17,6 +17,7 @@
   <li>Java</li>
   <li>Oracle SQL</li>
   <li>HTML, CSS, Javascript</li>
+</ul>
 
 ## 수상내역
 
