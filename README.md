@@ -13,6 +13,10 @@
 ## 주요 기능
 
 ## 사용언어
+<ul>
+  <li>Java</li>
+  <li>Oracle SQL</li>
+  <li>HTML, CSS, Javascript</li>
 
 ## 수상내역
 
