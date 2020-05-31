@@ -1,4 +1,4 @@
-<h1>한양대학교 소프트웨어융합캡스톤디자인2-1조</h1>
+<h1>한양대학교 소프트웨어융합캡스톤디자인2 - 1조</h1>
 <br>
 
 ## 프로젝트
@@ -12,7 +12,11 @@
 2020.03~2020.06
 
 ## 프로젝트 개요
-<img src="./img/ddoring.PNG">
+<img src="./img/ddoring.PNG"><br>
+<ul style="list-decoration:none">
+  <li><b></b></li>
+  <hr>
+</ul>
 
 ## 주요 기능
 <ul>
