@@ -13,10 +13,7 @@
 
 ## 프로젝트 개요
 <img src="./img/ddoring.PNG"><br>
-<ol>
-  <li><h3>기획의도</h3></li>
-  
-</ol>
+&nbsp;<h3>1. 기획의도</h3>
 
 ## 주요 기능
 <ul>
