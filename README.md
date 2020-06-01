@@ -39,11 +39,12 @@
 </ul>
 
 ## 사용기술
-### Apache Tomcat 9.0
-### SpringFramework
-### Mybatis
-### Maven
-### Jquery
+<ul>
+  <li>Apache Tomcat 9.0</li>
+  <li> SpringFramework</li>
+  <li> Mybatis</li>
+  <li> Maven</li>
+  <li> Jquery</li></ul>
 
 ## 사용언어
 <ul>
