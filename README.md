@@ -34,9 +34,16 @@
 <ul>
   <li>로그인/회원가입/로그아웃 기능</li>
   <li>회원정보 수정</li>
-  <li><h4>커뮤니티(게시판, 댓글) 운영</h4></li>
+  <li>커뮤니티(게시판, 댓글) 운</li>
   <li>댓글을 통한 매칭시스템</li>
 </ul>
+
+## 사용기술
+### Apache Tomcat 9.0
+### SpringFramework
+### Mybatis
+### Maven
+### Jquery
 
 ## 사용언어
 <ul>
