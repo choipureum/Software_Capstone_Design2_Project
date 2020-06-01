@@ -44,7 +44,7 @@
   <li> SpringFramework</li>
   <li> Mybatis</li>
   <li> Maven</li>
-  <li> Jquery</li></ul>
+</ul>
 
 ## 사용언어
 <ul>
